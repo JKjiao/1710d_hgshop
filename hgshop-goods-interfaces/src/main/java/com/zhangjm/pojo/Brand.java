@@ -52,6 +52,8 @@ public class Brand implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((deleted_flag == null) ? 0 : deleted_flag.hashCode());
+		result = prime * result + ((first_char == null) ? 0 : first_char.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -65,6 +67,16 @@ public class Brand implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Brand other = (Brand) obj;
+		if (deleted_flag == null) {
+			if (other.deleted_flag != null)
+				return false;
+		} else if (!deleted_flag.equals(other.deleted_flag))
+			return false;
+		if (first_char == null) {
+			if (other.first_char != null)
+				return false;
+		} else if (!first_char.equals(other.first_char))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -76,6 +88,16 @@ public class Brand implements Serializable {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	public Brand(Integer id, String name, String first_char, String deleted_flag) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.first_char = first_char;
+		this.deleted_flag = deleted_flag;
+	}
+	public Brand() {
+		super();
 	}
 	
 	
