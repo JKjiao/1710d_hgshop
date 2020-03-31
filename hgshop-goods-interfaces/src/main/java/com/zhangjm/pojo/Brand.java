@@ -13,9 +13,10 @@ public class Brand implements Serializable {
 	/** 品牌名称 **/
 	private String name;
 	/** 品牌首字母 **/
-	private String first_char;
+	private String firstChar;
 	/** 删除标识 **/
-	private String deleted_flag;
+	private String deletedFlag;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -28,32 +29,36 @@ public class Brand implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getFirst_char() {
-		return first_char;
+	public String getFirstChar() {
+		return firstChar;
 	}
-	public void setFirst_char(String first_char) {
-		this.first_char = first_char;
+	public void setFirstChar(String firstChar) {
+		this.firstChar = firstChar;
 	}
-	public String getDeleted_flag() {
-		return deleted_flag;
+	public String getDeletedFlag() {
+		return deletedFlag;
 	}
-	public void setDeleted_flag(String deleted_flag) {
-		this.deleted_flag = deleted_flag;
+	public void setDeletedFlag(String deletedFlag) {
+		this.deletedFlag = deletedFlag;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 	@Override
 	public String toString() {
-		return "Brand [id=" + id + ", name=" + name + ", first_char=" + first_char + ", deleted_flag=" + deleted_flag
-				+ "]";
+		return "Brand [id=" + id + ", name=" + name + ", firstChar=" + firstChar + ", deletedFlag=" + deletedFlag + "]";
+	}
+	public Brand(Integer id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((deleted_flag == null) ? 0 : deleted_flag.hashCode());
-		result = prime * result + ((first_char == null) ? 0 : first_char.hashCode());
+		result = prime * result + ((deletedFlag == null) ? 0 : deletedFlag.hashCode());
+		result = prime * result + ((firstChar == null) ? 0 : firstChar.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -67,15 +72,15 @@ public class Brand implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Brand other = (Brand) obj;
-		if (deleted_flag == null) {
-			if (other.deleted_flag != null)
+		if (deletedFlag == null) {
+			if (other.deletedFlag != null)
 				return false;
-		} else if (!deleted_flag.equals(other.deleted_flag))
+		} else if (!deletedFlag.equals(other.deletedFlag))
 			return false;
-		if (first_char == null) {
-			if (other.first_char != null)
+		if (firstChar == null) {
+			if (other.firstChar != null)
 				return false;
-		} else if (!first_char.equals(other.first_char))
+		} else if (!firstChar.equals(other.firstChar))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -89,17 +94,15 @@ public class Brand implements Serializable {
 			return false;
 		return true;
 	}
-	public Brand(Integer id, String name, String first_char, String deleted_flag) {
+	public Brand(Integer id, String name, String firstChar, String deletedFlag) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.first_char = first_char;
-		this.deleted_flag = deleted_flag;
+		this.firstChar = firstChar;
+		this.deletedFlag = deletedFlag;
 	}
 	public Brand() {
 		super();
 	}
-	
-	
 	
 }

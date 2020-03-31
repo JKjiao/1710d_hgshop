@@ -28,4 +28,14 @@ public class BrandServiceImpl implements BrandService {
 		return new PageInfo<Brand>(list);
 	}
 
+	@Override
+	public Brand toUpdateBrand(Integer id) {
+		return brandDao.toUpdateBrand(id);
+	}
+
+	@Override
+	public int doUpdateBrand(Brand brand) {
+		return brandDao.doUpdateBrand(brand);
+	}
+
 }

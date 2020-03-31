@@ -7,4 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="list" resultType="Brand">
 		SELECT * FROM hg_brand
 	</select>
+	
+	<select id="toUpdateBrand" resultType="Brand">
+		SELECT * FROM hg_brand WHERE id=#{id}
+	</select>
+	
+	<update id="doUpdateBrand">
+		UPDATE hg_brand
+		 SET name=#{name},first_char=#{firstChar},deleted_flag=#{deletedFlag} 
+		WHERE id=#{id}
+	</update>
 </mapper>

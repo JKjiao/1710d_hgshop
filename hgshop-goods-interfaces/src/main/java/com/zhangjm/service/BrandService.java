@@ -15,4 +15,19 @@ public interface BrandService {
 	List<Brand> listByFirst(String firstChar);
 	
 	PageInfo<Brand> list(Integer pageNum);
+
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	Brand toUpdateBrand(Integer id);
+	
+	/**
+	 * 修改品牌
+	 * @param brand
+	 * @return
+	 */
+	int doUpdateBrand(Brand brand);
 }
