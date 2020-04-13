@@ -136,7 +136,7 @@
 						<!-- 端口号 -->
 						<port>9094</port>
 						<!-- 项目访问路径 -->
-						<host>192.168.1.6</host>
+						<host>127.0.0.1</host>
 					</httpConnector>
 					<contextHandlers>
 						<jettyWebAppContext>
@@ -150,23 +150,30 @@
 				</configuration>
 			</plugin>
 			
+		<!-- Tomcat插件：非官方插件，第三方插件，用于启动Web服务。运行命令：tomcat7:run -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
-					<port>8080</port>
+					<update>true</update>
+					<!-- 项目端口号 -->
+					<port>80</port>
+					<!-- 项目的访问路径 -->
 					<path>/</path>
-					<uriEncoding>UTF-8</uriEncoding>
-					<contextReloadable>true</contextReloadable>
-					<staticContextDocbase>G://pic</staticContextDocbase>
-					<staticContextPath>/pic</staticContextPath>
 					<!-- 自动部署开始 -->
-					    <url>http://192.168.158.136:8880/manager/text</url>
-        				<username>boss</username>
+					    <url>http://192.168.158.138/manager/text</url>
+        				<username>gui</username>
 				        <password>123456</password>
 				        <update>true</update>
-				        <path>/stu</path>
+				        <path>/</path>
 				       <!-- 自动部署结束 --> 
+					<!-- get请求中文乱码 -->
+					<uriEncoding>utf-8</uriEncoding>
+					<contextReloadable>true</contextReloadable>
+					<useTestClasspath>true</useTestClasspath>
+					<staticContextPath>/pic/</staticContextPath>
+					<staticContextDocbase>D:/pic/</staticContextDocbase>
+					<!-- <staticContextPath>/img/</staticContextPath> <staticContextDocbase>D:/pic/</staticContextDocbase> -->
 				</configuration>
 			</plugin>
 		</plugins>

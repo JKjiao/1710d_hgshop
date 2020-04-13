@@ -7,21 +7,21 @@ public class Spu implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -3233108997229886312L;
 	/** 主键 **/
 	private Integer id;
 	/** SPU名 **/
-	private String goods_name;
+	private String goodsName;
 	/** 是否上架 **/
-	private String is_marketable;
+	private String isMarketable;
 	/** 品牌 **/
-	private Integer brand_id;
+	private Integer brandId;
 	/** 副标题 **/
 	private String caption;
 	/** 一级类目 **/
-	private Integer category_id;
+	private Integer categoryId;
 	/** 小图 **/
-	private String small_pic;
+	private String smallPic;
 	/** 品牌 **/
 	private Brand brand;
 	/** 分类 **/
@@ -32,23 +32,23 @@ public class Spu implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getGoods_name() {
-		return goods_name;
+	public String getGoodsName() {
+		return goodsName;
 	}
-	public void setGoods_name(String goods_name) {
-		this.goods_name = goods_name;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
 	}
-	public String getIs_marketable() {
-		return is_marketable;
+	public String getIsMarketable() {
+		return isMarketable;
 	}
-	public void setIs_marketable(String is_marketable) {
-		this.is_marketable = is_marketable;
+	public void setIsMarketable(String isMarketable) {
+		this.isMarketable = isMarketable;
 	}
-	public Integer getBrand_id() {
-		return brand_id;
+	public Integer getBrandId() {
+		return brandId;
 	}
-	public void setBrand_id(Integer brand_id) {
-		this.brand_id = brand_id;
+	public void setBrandId(Integer brandId) {
+		this.brandId = brandId;
 	}
 	public String getCaption() {
 		return caption;
@@ -56,17 +56,17 @@ public class Spu implements Serializable {
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
-	public Integer getCategory_id() {
-		return category_id;
+	public Integer getCategoryId() {
+		return categoryId;
 	}
-	public void setCategory_id(Integer category_id) {
-		this.category_id = category_id;
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
-	public String getSmall_pic() {
-		return small_pic;
+	public String getSmallPic() {
+		return smallPic;
 	}
-	public void setSmall_pic(String small_pic) {
-		this.small_pic = small_pic;
+	public void setSmallPic(String smallPic) {
+		this.smallPic = smallPic;
 	}
 	public Brand getBrand() {
 		return brand;
@@ -85,15 +85,15 @@ public class Spu implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Spu [id=" + id + ", goods_name=" + goods_name + ", is_marketable=" + is_marketable + ", brand_id="
-				+ brand_id + ", caption=" + caption + ", category_id=" + category_id + ", small_pic=" + small_pic
-				+ ", brand=" + brand + ", category=" + category + "]";
+		return "Spu [id=" + id + ", goodsName=" + goodsName + ", isMarketable=" + isMarketable + ", brandId=" + brandId
+				+ ", caption=" + caption + ", categoryId=" + categoryId + ", smallPic=" + smallPic + ", brand=" + brand
+				+ ", category=" + category + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((goods_name == null) ? 0 : goods_name.hashCode());
+		result = prime * result + ((goodsName == null) ? 0 : goodsName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
@@ -106,10 +106,10 @@ public class Spu implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Spu other = (Spu) obj;
-		if (goods_name == null) {
-			if (other.goods_name != null)
+		if (goodsName == null) {
+			if (other.goodsName != null)
 				return false;
-		} else if (!goods_name.equals(other.goods_name))
+		} else if (!goodsName.equals(other.goodsName))
 			return false;
 		if (id == null) {
 			if (other.id != null)

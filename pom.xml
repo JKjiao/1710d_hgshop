@@ -42,8 +42,8 @@
 
 	<dependencyManagement>
 
-		<dependencies>
 			<!-- 引入dubbo的依赖配置 -->
+		<dependencies>
 			<dependency>
 				<groupId>org.apache.dubbo</groupId>
 				<artifactId>dubbo</artifactId>
@@ -283,7 +283,7 @@
 						<!-- 端口号 -->
 						<port>9093</port>
 						<!-- 项目访问路径 -->
-						<host>192.168.1.6</host>
+						<host>127.0.0.1</host>
 					</httpConnector>
 					<contextHandlers>
 						<jettyWebAppContext>
@@ -306,5 +306,8 @@
   	<module>hgshop-goods-interfaces</module>
   	<module>hgshop-goods-provider</module>
   	<module>hgshop-goods-consumer</module>
+  	<module>hgshop-user-interfaces</module>
+  	<module>hgshop-user-provider</module>
+  	<module>hgshop-web</module>
   </modules>
 </project>

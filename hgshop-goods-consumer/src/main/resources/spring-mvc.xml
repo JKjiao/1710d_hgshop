@@ -8,13 +8,15 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-
+	<!-- 文件上传，配置文件配置 -->
+	<context:property-placeholder  location="classpath:upload.properties"/>
 	<!-- 必须修改   -->
 	 <!-- <import resource="classpath:applicationContext-elasticSearch.xml"/> -->
 	<!-- <import resource="classpath:applicationContext-kafka-consumer.xml"/>  -->
+	
 	<!-- 扫描器   必须修改 -->
 	<context:component-scan
-		base-package="com.zhangjm.controller" />
+		base-package="com.zhangjm.controller,com.zhangjm.common" />
 	<!-- 视图解析图 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,6 +30,16 @@
 	<!-- mvc注解驱动 -->
 	<mvc:annotation-driven/>
 	
+		<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<mvc:exclude-mapping path="/pic/**"/>
+			<mvc:exclude-mapping path="/resource/**"/>
+			<mvc:exclude-mapping path="/admin/toLogin"/>
+			<mvc:exclude-mapping path="/admin/login"/>
+			<bean class="com.zhangjm.common.UserInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	<!-- 配置redis的配置   必须修改-->
 		<bean id="jedisConnectionFactory"
@@ -71,7 +83,7 @@
 		
 	<!-- 应用程序名称 -->
 	<!-- <dubbo:application name="students-web"  /> -->
-	<dubbo:application name="students-web">
+	<dubbo:application name="demo4-application">
 	<dubbo:parameter key="qos.enable" value="false"/>
 	</dubbo:application>
 	

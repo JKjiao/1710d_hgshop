@@ -16,7 +16,6 @@ public interface BrandService {
 	
 	PageInfo<Brand> list(Integer pageNum);
 
-	
 	/**
 	 * 
 	 * @param id
